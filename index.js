@@ -1,12 +1,11 @@
+
 "use strict";
-import { config } from './dist/db/connection';
-import Server from './dist/models/servers';
-
-// Load environment variables from .env file
-config();
-
-const server = new Server();
-
-// Export the server as a module
-export default server;
-
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const servers_1 = __importDefault(require("./dist/models/servers"));
+const dotenv_1 = __importDefault(require("dotenv"));
+//COnfiguramos las variables de ambiente
+dotenv_1.default.config();
+const server = new servers_1.default();
